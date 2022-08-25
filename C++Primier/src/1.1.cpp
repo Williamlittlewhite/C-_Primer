@@ -1,6 +1,5 @@
 //Á·Ï°1.1
-//g++ 1.1.cpp -o 1.1   
-//1.1   
+//g++ 1.1.cpp -o 1.1    
 //echo %ERRORLEVEL
 //int main()
 //{
@@ -8,8 +7,7 @@
 //}
 
 //Á·Ï°1.2  
-//g++ 1.2.cpp -o 1.2   
-//1.2   
+//g++ 1.1.cpp -o 1.1     
 //echo %ERRORLEVEL
 //int main()
 //{
