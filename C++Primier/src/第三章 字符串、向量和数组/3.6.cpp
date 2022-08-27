@@ -59,7 +59,7 @@
 //Á·Ï°3.45£º
 //#include<iostream>
 //
-//int main()
+//int main()  
 //{
 //	int ia[3][4] = { {1,2,3,4},{5,4,5,6},{4,3,5,8} };
 //	for (auto (&i) : ia)
