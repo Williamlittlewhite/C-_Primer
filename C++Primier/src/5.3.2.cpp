@@ -114,65 +114,37 @@
 //	std::cout << " newline : " << newlineCnt << " ";
 //}
 //Á·Ï°5.12:
-#include<iostream>
-int main()
-{
-	int aCnt, eCnt, iCnt, oCnt, uCnt,ffCnt,flCnt,fiCnt;
-	aCnt = eCnt = iCnt = oCnt = uCnt = ffCnt = flCnt = fiCnt = 0;
-	char c;
-	std::string s;
-	while (std::cin.get(c)) {
-		switch (c)
-		{
-		case 'a':
-		case 'A':
-			aCnt++;
-			break;
-		case 'e':
-		case 'E':
-			eCnt++;
-			break;
-		case 'i':
-		case 'I':
-			iCnt++;
-			break;
-		case 'o':
-		case 'O':
-			oCnt++;
-			break;
-		case 'u':
-		case 'U':
-			uCnt++;
-			break;
-		}
-		if(c=='f')
-			s += c;
-		
-		//std::cout << s << std::endl;
-		if (s[0]=='f'&&s.size()==2) {
-			if (s[1] == 'f')
-			{
-				ffCnt++; s.clear();
-			}
-			else if (s[1] == 'l')
-			{
-				flCnt++; s.clear();
-			}
-			else if (s[1] == 'i')
-			{
-				fiCnt++; s.clear();
-			}
-
-		}
-	
-		
-	}
-	std::cout << " a : " << aCnt << " ";
-	std::cout << " e : " << eCnt << " ";
-	std::cout << " i : " << iCnt << " ";
-	std::cout << " o : " << oCnt << " ";
-	std::cout << " u : " << uCnt << " ";
-	std::cout << " ff : " << ffCnt << " ";
-	std::cout << " fl : " << flCnt << " ";
-	std::cout << " fi : " << fiCnt << " ";
-}
+//#include<iostream>
+//int main()
+//{
+//	int ffCnt,flCnt,fiCnt;
+//	ffCnt = flCnt = fiCnt = 0;
+//	char c,prech='\0';
+//	std::string s;
+//	while (std::cin.get(c)) {
+//		bool flag = false;
+//		if (prech == 'f')
+//		{
+//			switch (c)
+//			{
+//			case 'f':
+//				ffCnt++;
+//				flag = true;
+//				break;
+//			case 'l':
+//				flCnt++;
+//				break;
+//			case 'i':
+//				fiCnt++;
+//				break;
+//			}
+//			
+//		}
+//		if (flag) prech = '\0';
+//		else prech = c;
+//		
+//	}
+//	std::cout << " ff : " << ffCnt << " ";
+//	std::cout << " fl : " << flCnt << " ";
+//	std::cout << " fi : " << fiCnt << " ";
+//}
