@@ -1,4 +1,4 @@
-////Á·Ï°14.2&&14.6&&14.9&&14.13£º
+////Á·Ï°14.2&&14.6&&14.9&&14.13&&14.20&&14.22£º
 //#include<string>
 //#include<iostream>
 //class Sales_data
@@ -19,16 +19,26 @@
 //		units_sold = s.units_sold;
 //		revenue = s.revenue;
 //	}
+//	//Sales_data& operator+=(const Sales_data& s)
+//	//{
+//	//	units_sold += s.units_sold;
+//	//	revenue += s.revenue;
+//	//	return *this;
+//	//}
 //	Sales_data& operator+=(const Sales_data& s)
 //	{
-//		units_sold += s.units_sold;
-//		revenue += s.revenue;
+//		(*this) = (*this + s);
 //		return *this;
 //	}
 //	Sales_data& operator-=(const Sales_data& s)
 //	{
 //		units_sold -= s.units_sold;
 //		revenue -= s.revenue;
+//		return *this;
+//	}
+//	Sales_data& operator=(const std::string& s)
+//	{
+//		bookNo = s;
 //		return *this;
 //	}
 //	
@@ -62,24 +72,67 @@
 //	lhs.units_sold = s1.units_sold - s2.units_sold;
 //	return lhs;
 //}
-//
-////Á·Ï°14.5&&14.8&&14.12&&14.17:
+
+////Á·Ï°14.5&&14.8&&14.12&&14.17&&14.19&&14.25:
 //#include<iostream>
+//#include<vector>
+//#include<string>
 //class Date
 //{
 //public:
 //	Date() = default;
 //	Date(int y, int m, int d) :year(y),month(m),day(d){ }
+//	Date& operator=(const std::string& d)
+//	{
+//		std::string temp;
+//		std::vector<std::string> v;
+//		for (auto i : d)
+//		{
+//			if (i == '-')
+//				v.push_back(temp),temp.clear();
+//			else
+//				temp += i;
+//		}
+//		v.push_back(temp);
+//	/*	std::cout << v[0] << " " << v[1] << " " << v[2];*/
+//		year = std::stoi(v[0]);
+//		month = std::stoi(v[1]);
+//		day = std::stoi(v[2]);
+//		return *this;
+//	}
 //	friend std::ostream& operator<<(std::ostream&, const Date&);
 //	friend std::istream& operator>>(std::istream&, Date&);
 //	friend bool operator== (const Date&, const Date&);
 //	friend bool operator!= (const Date&, const Date&);
+//	friend bool operator<(const Date&, const Date&);
+//	friend bool operator<=(const Date&, const Date&);
+//	friend bool operator>(const Date&, const Date&);
+//	friend bool operator>=(const Date&, const Date&);
+//	void show()
+//	{
+//		std::cout << year << " " << month << " " << day;
+//	}
 //private:
 //	int year, month, day;
 //};
 //bool operator== (const Date& d1, const Date& d2)
 //{
 //	return d1.year == d2.year && d1.month == d2.month && d1.day == d2.day;
+//}
+//bool operator< (const Date& d1, const Date& d2)
+//{
+//	return (d1.year < d2.year) ||((d1.year==d2.year)&&(d1.month < d2.month)) || ((d1.year == d2.year && (d1.month==d2.month)&&(d1.day==d2.day)));
+//}
+//bool operator<=(const Date& d1, const Date& d2)
+//{
+//	return (d1 == d2) || (d1 < d2);
+//}
+//bool operator> (const Date& d1, const Date& d2)
+//{
+//	return (d1.year > d2.year) || ((d1.year == d2.year) && (d1.month > d2.month)) || ((d1.year == d2.year) && (d1.month == d2.month) && (d1.day > d2.day));
+//}
+//bool operator>= (const Date& d1, const Date& d2) {
+//	return (d1 == d2) || (d1 > d2);
 //}
 //bool operator!= (const Date& d1, const Date& d2)
 //{
@@ -99,11 +152,21 @@
 //}
 //int main()
 //{
-//	Date d1(0, 0, 0);
-//	Date d2(0, 1, 0);
-//	Date d3(0, 0, 0);
-//	if (d1 != d2)
-//		std::cout << "false!" << std::endl;
-//	if (d1 == d3)
-//		std::cout << "true!";
+//	Date d1(1999, 6, 24);
+//	d1 = "1999-6-15";
+//	d1.show();
+//	Date d2(2000, 5, 11);
+//	Date d3(1998, 6, 24);
+//	//if (d1 != d2)
+//	//	std::cout << "false!" << std::endl;
+//	//if (d1 == d3)
+//	//	std::cout << "true!";
+//	//if (d1 > d2)
+//	//	std::cout << "d1>d2" << std::endl;
+//	//else
+//	//	std::cout << "d1<=d2" << std::endl;
+//	//if (d2 > d3)
+//	//	std::cout << "d2>d3" << std::endl;
+//	//else
+//	//	std::cout << "d2<=d3" << std::endl;
 //}
