@@ -68,3 +68,25 @@ private:
 //{
 //	testReadString();
 //}
+
+//Á·Ï°14.37:
+//#include<iostream>
+//#include<vector>
+//#include<algorithm>
+//class isequal {
+//public:
+//	bool operator()(int a)
+//	{
+//		return a == oldvalue;
+//	}
+//private:
+//	int oldvalue = 12;
+//};
+//int main()
+//{
+//	isequal eq;
+//	std::vector<int> vec{ 5,8,12,12,50 };
+//	std::replace_if(vec.begin(), vec.end(), eq, 30);
+//	for (auto i : vec)
+//		std::cout << i << " ";
+//}
