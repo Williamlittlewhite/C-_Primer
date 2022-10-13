@@ -11,6 +11,8 @@ public:
 	{
 		std::cout << bookNo << " " << price << std::endl;
 	}
+	virtual Quote* clone()const& { return new Quote(*this); }
+	virtual Quote* clone()&& { return new Quote(std::move(*this));}
 	virtual ~Quote(){}
 protected:
 	double price = 0.0;
@@ -23,6 +25,8 @@ private:
 	double discount;
 public:
 	BulkQuote() = default;
+	BulkQuote* clone()const& { return new BulkQuote(*this); }
+	BulkQuote* clone()&&{ return new BulkQuote(*this); }
 	BulkQuote(const std::string& s,double pr,std::size_t num,double dis):Quote(s,pr),min_qunty(num),discount(dis) {}
 	double net_price(std::size_t n) const {
 		if (n >= min_qunty)
