@@ -6,7 +6,7 @@ public:
 	Quote() = default;
 	Quote(const std::string& s,double salesPrice):bookNo(s),price(salesPrice) {}
 	const std::string& isbn() const { return bookNo; }
-	virtual double net_price(std::size_t n)const { return n * price; }
+	virtual double net_price(std::size_t n)const { /*std::cout << price;*/return n * price; }
 	virtual void debug()
 	{
 		std::cout << bookNo << " " << price << std::endl;
@@ -32,7 +32,8 @@ public:
 		if (n >= min_qunty)
 			return n * (1 - discount) * price;
 		else
-			return min_qunty * (1 - discount) * price + (n - min_qunty) * price;
+			/*return min_qunty * (1 - discount) * price + (n - min_qunty) * price;*/
+			return n * price;
 	}
 	void debug()
 	{
