@@ -28,7 +28,7 @@
 */ 
 
 #include "TextQuery.h"
-#include "make_plural.h"
+//#include "make_plural.h"
 
 #include <cstddef>
 #include <memory>
@@ -114,7 +114,7 @@ ostream &print(ostream & os, const QueryResult &qr)
 {
     // if the word was found, print the count and all occurrences
     os << qr.sought << " occurs " << qr.lines->size() << " "
-       << make_plural(qr.lines->size(), "time", "s") << endl;
+ << endl;
 
     // print each line in which the word appeared
 	for (auto num : *qr.lines) // for every element in the set 

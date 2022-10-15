@@ -48,7 +48,6 @@ public:
 	line_it begin() const { return lines->cbegin(); }
 	line_it end() const   { return lines->cend(); }
 	std::shared_ptr<std::vector<std::string>> get_file() { return file; }
-private:
 	std::string sought;  // word this query represents
 	std::shared_ptr<std::set<line_no>> lines; // lines it's on
 	std::shared_ptr<std::vector<std::string>> file;  //input file
